@@ -1,9 +1,5 @@
 {
     "name": "storycms/core",
-    "require": {
-        "php": ">=5.6.3",
-        "laravel/framework": "5.4.*"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -15,6 +11,11 @@
             "email": "purwandi@froyo.co.id"
         }
     ],
+    "require": {
+        "php": ">=5.6.3",
+        "laravel/framework": "5.4.*",
+        "jenssegers/date": "^3.2"
+    },
     "require-dev": {
 
     },
