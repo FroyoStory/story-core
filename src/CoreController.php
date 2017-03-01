@@ -11,7 +11,19 @@ class CoreController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+     * The module name
+     *
+     * @var string
+     */
     protected $module;
+
+    /**
+     * The global variable data controller
+     *
+     * @var array
+     */
+    protected $data = [];
 
     /**
      * Render view from given request
@@ -22,6 +34,8 @@ class CoreController extends BaseController
      */
     public function view($template, Array $data = [])
     {
+        $data = array_merge($this->data, $data);
+
         return view($this->module . '.' . $template, $data);
     }
 }

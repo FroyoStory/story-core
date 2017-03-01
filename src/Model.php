@@ -7,6 +7,13 @@ use Jenssegers\Date\Date;
 class Model extends \Illuminate\Database\Eloquent\Model
 {
     /**
+     * The number of models to return for pagination.
+     *
+     * @var int
+     */
+    protected $perPage = 50;
+
+    /**
      * Return a timestamp as DateTime object.
      *
      * @param  mixed  $value
