@@ -19,8 +19,12 @@ class CoreServiceProvider extends ServiceProvider
         $this->app->singleton('navigation', function() {
             return new Navigation;
         });
+        $this->app->singleton('hook', function() {
+            return new Hook;
+        });
 
         $loader->alias('Navigation', Facades\NavigationFacade::class);
+        $loader->alias('Hook', Facades\HookFacade::class);
     }
 
     public function register()
