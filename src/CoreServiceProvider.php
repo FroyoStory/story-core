@@ -14,6 +14,7 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->app->register(\Jenssegers\Agent\AgentServiceProvider::class);
         $loader = AliasLoader::getInstance();
 
         $this->app->singleton('navigation', function() {
@@ -23,6 +24,8 @@ class CoreServiceProvider extends ServiceProvider
             return new Hook;
         });
 
+        $loader->alias('Agent', \Jenssegers\Agent\Facades\Agent::class);
+        $loader->alias('Configuration', Models\ConfigurationRepository::class);
         $loader->alias('Navigation', Facades\NavigationFacade::class);
         $loader->alias('Hook', Facades\HookFacade::class);
     }
